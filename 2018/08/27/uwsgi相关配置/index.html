@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="文档链接：http://www.cnblogs.com/tugenhua0707/p/4050072.html 一：Git是什么？  Git是目前世界上最先进的分布式版本控制系统。 二：SVN与Git的最主要的区别？  SVN是集中式版本控制系统，版本库是集中放在中央服务器的， Git是分布式版本控制系统，那么它就没有中央服务器的 三：设置用户名和邮箱作为一个标示  git config --gl">
+<meta name="description" content="ubuntu下配置 nginx  +uwsgi  ＋flask nginx配置1.环境配置sudo apt-get install uwsgi-plugin-python (不装的话发起请求的时候uwsgi会报错) 如果是python3 的话请使用sudo apt-get install uwsgi-plugin-python3 2.安装nginxsudo apt-get install ngin">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git">
-<meta property="og:url" content="http://yoursite.com/2018/07/17/Git/index.html">
+<meta property="og:title" content="uwsgi相关配置">
+<meta property="og:url" content="http://yoursite.com/2018/08/27/uwsgi相关配置/index.html">
 <meta property="og:site_name" content="付昌运的个人博客">
-<meta property="og:description" content="文档链接：http://www.cnblogs.com/tugenhua0707/p/4050072.html 一：Git是什么？  Git是目前世界上最先进的分布式版本控制系统。 二：SVN与Git的最主要的区别？  SVN是集中式版本控制系统，版本库是集中放在中央服务器的， Git是分布式版本控制系统，那么它就没有中央服务器的 三：设置用户名和邮箱作为一个标示  git config --gl">
+<meta property="og:description" content="ubuntu下配置 nginx  +uwsgi  ＋flask nginx配置1.环境配置sudo apt-get install uwsgi-plugin-python (不装的话发起请求的时候uwsgi会报错) 如果是python3 的话请使用sudo apt-get install uwsgi-plugin-python3 2.安装nginxsudo apt-get install ngin">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-17T06:28:39.095Z">
+<meta property="og:updated_time" content="2018-08-27T09:40:16.177Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git">
-<meta name="twitter:description" content="文档链接：http://www.cnblogs.com/tugenhua0707/p/4050072.html 一：Git是什么？  Git是目前世界上最先进的分布式版本控制系统。 二：SVN与Git的最主要的区别？  SVN是集中式版本控制系统，版本库是集中放在中央服务器的， Git是分布式版本控制系统，那么它就没有中央服务器的 三：设置用户名和邮箱作为一个标示  git config --gl">
+<meta name="twitter:title" content="uwsgi相关配置">
+<meta name="twitter:description" content="ubuntu下配置 nginx  +uwsgi  ＋flask nginx配置1.环境配置sudo apt-get install uwsgi-plugin-python (不装的话发起请求的时候uwsgi会报错) 如果是python3 的话请使用sudo apt-get install uwsgi-plugin-python3 2.安装nginxsudo apt-get install ngin">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/17/Git/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/27/uwsgi相关配置/"/>
 
 
 
 
 
-  <title>Git | 付昌运的个人博客</title>
+  <title>uwsgi相关配置 | 付昌运的个人博客</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/17/Git/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/27/uwsgi相关配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="付昌运">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Git</h1>
+          <h1 class="post-title" itemprop="name headline">uwsgi相关配置</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-17T13:11:58+08:00">
-                2018-07-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-27T15:43:32+08:00">
+                2018-08-27
               </time>
             
 
@@ -299,44 +299,46 @@
       
 
       
-        <p>文档链接：<a href="http://www.cnblogs.com/tugenhua0707/p/4050072.html" target="_blank" rel="noopener">http://www.cnblogs.com/tugenhua0707/p/4050072.html</a></p>
-<h3>一：Git是什么？</h3>
+        <p>ubuntu下配置 nginx  +uwsgi  ＋flask</p>
+<h1 id="nginx配置"><a href="#nginx配置" class="headerlink" title="nginx配置"></a>nginx配置</h1><h2 id="1-环境配置"><a href="#1-环境配置" class="headerlink" title="1.环境配置"></a>1.环境配置</h2><pre><code>sudo apt-get install uwsgi-plugin-python (不装的话发起请求的时候uwsgi会报错)
+如果是python3 的话请使用sudo apt-get install uwsgi-plugin-python3
+</code></pre><h2 id="2-安装nginx"><a href="#2-安装nginx" class="headerlink" title="2.安装nginx"></a>2.安装nginx</h2><pre><code>sudo apt-get install nginx
+测试命令：sudo service nginx start
+</code></pre><h2 id="配置nginx服务器"><a href="#配置nginx服务器" class="headerlink" title="配置nginx服务器"></a>配置nginx服务器</h2><pre><code> 1：进入/etc/nginx/sites-enabled/;
+ 2：mv default default.bak （备份文件）
+ 3：vim default (编辑文件)
+ 4：server {                                                                       
+                listen 80;                   # 服务器监听端口                                                 
+                server_name 110.110.110.110; # 域名或者公网IP                                                    
+                charset      utf-8;          # 编码                                                  
+                client_max_body_size 75M;    # 之前写的关于GET和POST的区别，这里应该是原因之一吧                                                   
 
-<pre><code>Git是目前世界上最先进的分布式版本控制系统。
-</code></pre><h3>二：SVN与Git的最主要的区别？</h3>
+                location / {                                                                   
+                    include uwsgi_params;         # 导入uwsgi配置                                            
+                    uwsgi_pass 127.0.0.1:8000;    # 转发端口，需要和uwsgi配置当中的监听端口一致                                                # Python解释器所在的路径（这里为虚拟环境）      
+                    uwsgi_param UWSGI_CHDIR /home/chihu; # 项目根目录     
+                    uwsgi_param UWSGI_SCRIPT manage:app; # 项目的主程序，即Flask app所在的位置                           
+                }                                                                              
+            }
 
-<pre><code>SVN是集中式版本控制系统，版本库是集中放在中央服务器的，
-Git是分布式版本控制系统，那么它就没有中央服务器的
-</code></pre><h3>三：设置用户名和邮箱作为一个标示</h3>
+输入:wq保存配置文件,可用nginx -t测试一下配置文件是否正确。
+若检测配置文件失败，再好好检查下配置文件有没有疏漏。此时访问Nginx服务器应该会得到502 Bad Gateway的提示，因为请求被Nginx转发了，但是并没有转发服务器来处理请求(还没有配置uwsgi)。
+</code></pre><h2 id="uwsgi安装配置"><a href="#uwsgi安装配置" class="headerlink" title="uwsgi安装配置"></a>uwsgi安装配置</h2><h2 id="安装uwsgi"><a href="#安装uwsgi" class="headerlink" title="安装uwsgi"></a>安装uwsgi</h2><pre><code>1. sudo apt-get install uwsgi
+2. 在项目根目录下新建配置文件 uwsgi.ini（uwsgi支持多种配置文件格式: xml, ini, json等） vim uwsgi.ini
+3. [uwsgi]                                                                                                                                                      
+socket = 127.0.0.1:8000             # uwsgi的监听端口                                                                                                                             
+plugins = python                    # 这行一定要加上，不然请求时会出现-- unavailable modifier requested: 0 --错误提示                                                                                                                                  
+chidir = /home/chihu                # 项目根目录                                                                                                                       
+wsgi-file = manage.py               # flask程序的启动文件                                                                                                             
+callable = app                      # 程序变量名    
+输入:wq保存配置文件，可以通过uwsgi uwsgi.ini来启动uwsgi。
+</code></pre><ul>
+<li>启动Nginx<ul>
+<li>sudo service nginx restart（每次修改nginx配置问价后，都需要重启nginx服务器来执行新功能）<br>uwsgi wsgi.ini</li>
+</ul>
+</li>
+</ul>
 
-<pre><code>git config --global user.name &quot;&quot;;
-git config --global user.email &quot;&quot;
-</code></pre><h3>四：创建一个版本库（选择你喜欢的地方创建）</h3>
-
-<pre><code>git init  -&gt;创建命令
-    pwd 命令是用于显示当前的目录。
-</code></pre><h3>五：把文件添加到版本库中</h3>
-
-<pre><code>git add .(把当前目录下的所有东西都添加上缓存区中)
-    使用命令git add ceshi.txt(ceshi为新添的文件) 添加到缓存区中;
-    使用git commit提交到github仓库中;
-    可以使用 git status 来查看文件
-    如果嫌上面显示的信息太多的话，我们可以使用命令 git log –pretty=oneline
-</code></pre><h3>六：回退版本</h3>
-
-<pre><code>git reset  --hard HEAD^（回退到上一个版本）
-如果想回退更高的版本只需要加^ 或者更为简便的git reset  --hard HEAD~100
-可以通过如下命令即可获取到版本号：git reflog
-</code></pre><h3>七：撤销操作</h3>
-
-<pre><code>首先在做撤销之前，我们可以先用 git status 查看下当前的状态。
-撤销命令：git checkout  --  readme.txt,
-git checkout -- readme.txt 中的 -- 很重要，如果没有 -- 的话，那么命令变成创建分支了。
-</code></pre> <h3>八：Git与svn创建分支的本质：</h3>
-
-<pre><code>git创建分支本质：创建一个文件，写入一个40字节的哈希值
-    svn创建分支本质：就是把文件拷贝一份
-</code></pre>
       
     </div>
     
@@ -360,15 +362,15 @@ git checkout -- readme.txt 中的 -- 很重要，如果没有 -- 的话，那么
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/08/03/scrapy框架小解/" rel="next" title="scrapy框架小解">
+                <i class="fa fa-chevron-left"></i> scrapy框架小解
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/03/python爬虫基础/" rel="prev" title="python爬虫基础">
-                python爬虫基础 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -482,7 +484,7 @@ git checkout -- readme.txt 中的 -- 很重要，如果没有 -- 的话，那么
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">一：Git是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">二：SVN与Git的最主要的区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">三：设置用户名和邮箱作为一个标示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">四：创建一个版本库（选择你喜欢的地方创建）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">五：把文件添加到版本库中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">六：回退版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">七：撤销操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">8.</span> <span class="nav-text">八：Git与svn创建分支的本质：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nginx配置"><span class="nav-number">1.</span> <span class="nav-text">nginx配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-环境配置"><span class="nav-number">1.1.</span> <span class="nav-text">1.环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装nginx"><span class="nav-number">1.2.</span> <span class="nav-text">2.安装nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置nginx服务器"><span class="nav-number">1.3.</span> <span class="nav-text">配置nginx服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uwsgi安装配置"><span class="nav-number">1.4.</span> <span class="nav-text">uwsgi安装配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装uwsgi"><span class="nav-number">1.5.</span> <span class="nav-text">安装uwsgi</span></a></li></ol></li></ol></div>
             
 
           </div>
