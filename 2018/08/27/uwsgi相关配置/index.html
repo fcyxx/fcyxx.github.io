@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="付昌运的个人博客">
 <meta property="og:description" content="ubuntu下配置 nginx  +uwsgi  ＋flask nginx配置1.环境配置sudo apt-get install uwsgi-plugin-python (不装的话发起请求的时候uwsgi会报错) 如果是python3 的话请使用sudo apt-get install uwsgi-plugin-python3 2.安装nginxsudo apt-get install ngin">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-27T09:40:16.177Z">
+<meta property="og:updated_time" content="2018-08-27T09:53:49.302Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="uwsgi相关配置">
 <meta name="twitter:description" content="ubuntu下配置 nginx  +uwsgi  ＋flask nginx配置1.环境配置sudo apt-get install uwsgi-plugin-python (不装的话发起请求的时候uwsgi会报错) 如果是python3 的话请使用sudo apt-get install uwsgi-plugin-python3 2.安装nginxsudo apt-get install ngin">
@@ -315,7 +315,7 @@
 
                 location / {                                                                   
                     include uwsgi_params;         # 导入uwsgi配置                                            
-                    uwsgi_pass 127.0.0.1:8000;    # 转发端口，需要和uwsgi配置当中的监听端口一致                                                # Python解释器所在的路径（这里为虚拟环境）      
+                    uwsgi_pass 127.0.0.1:8000;    # 转发端口，需要和uwsgi配置当中的监听端口一致                                                 
                     uwsgi_param UWSGI_CHDIR /home/chihu; # 项目根目录     
                     uwsgi_param UWSGI_SCRIPT manage:app; # 项目的主程序，即Flask app所在的位置                           
                 }                                                                              
@@ -326,11 +326,11 @@
 </code></pre><h2 id="uwsgi安装配置"><a href="#uwsgi安装配置" class="headerlink" title="uwsgi安装配置"></a>uwsgi安装配置</h2><h2 id="安装uwsgi"><a href="#安装uwsgi" class="headerlink" title="安装uwsgi"></a>安装uwsgi</h2><pre><code>1. sudo apt-get install uwsgi
 2. 在项目根目录下新建配置文件 uwsgi.ini（uwsgi支持多种配置文件格式: xml, ini, json等） vim uwsgi.ini
 3. [uwsgi]                                                                                                                                                      
-socket = 127.0.0.1:8000             # uwsgi的监听端口                                                                                                                             
-plugins = python                    # 这行一定要加上，不然请求时会出现-- unavailable modifier requested: 0 --错误提示                                                                                                                                  
-chidir = /home/chihu                # 项目根目录                                                                                                                       
-wsgi-file = manage.py               # flask程序的启动文件                                                                                                             
-callable = app                      # 程序变量名    
+    socket = 127.0.0.1:8000             # uwsgi的监听端口                                                                                                                             
+    plugins = python                    # 这行一定要加上，不然请求时会出现-- unavailable modifier requested: 0 --错误提示                                                                                                                                  
+    chidir = /home/chihu                # 项目根目录                                                                                                                       
+    wsgi-file = manage.py               # flask程序的启动文件                                                                                                             
+    callable = app                      # 程序变量名    
 输入:wq保存配置文件，可以通过uwsgi uwsgi.ini来启动uwsgi。
 </code></pre><ul>
 <li>启动Nginx<ul>
