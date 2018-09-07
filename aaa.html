@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .boll{
+      width: 30px;
+      height: 30px;
+      border-radius: 34px;
+      background-color: blueviolet;
+      position: absolute;
+      left: 2px;
+    }
+
+    .game{
+      width: 400px;
+      height: 400px;
+      background-color: yellow;
+      margin: 0 auto;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="game">
+      <div class="boll"></div>
+  </div>
+
+
+  
+</body>
+<script>
+
+  var boll = document.getElementsByClassName('boll')[0];
+  var game = document.getElementsByClassName('game')[0];
+
+  var zuidda_jianju = game.offsetWidth - boll.offsetWidth
+
+  var dingbu = 0
+  var sb = zuidda_jianju
+  console.log(sb)
+  console.log('sbsbsvbsbsbsbsbsb')
+  sb = sb / 2
+  console.log(sb)
+  var tantiao_gaodu = zuidda_jianju
+
+  var xxx = 0
+
+
+  var speedX = 6
+  var speedY = 18;
+  var mydingshiqi = setInterval(function () {
+
+    // if (boll.offsetLeft > zuidda_jianju || boll.offsetLeft < 0)  {
+    //   speedX = -speedX
+    // }
+    // boll.style.left = boll.offsetLeft + speedX + 'px'
+
+
+    // tantiao_gaodu = tantiao_gaodu / 2
+    // console.log(tantiao_gaodu)
+    
+
+    if (boll.offsetTop >= zuidda_jianju)  {
+      speedY = -speedY
+      if (speedY < 0) {
+        // if (boll.offsetTop < zuidda_jianju) {
+        //   speedY = speedY / 2
+        //   if (speedY <= 1) {
+        //     speedY = 1
+        //   } else {
+        //     speedY = speedY / 2
+        //   }
+        // }
+        
+        
+        xxx = xxx + tantiao_gaodu / 2
+        if (tantiao_gaodu < 2) {
+          tantiao_gaodu = 0
+          boll.style.top = zuidda_jianju
+          clearInterval(mydingshiqi , function () {
+            console.log('qingchu dinggshiqi  chenggogn ')
+          })
+          boll.style.bottom = '0px'
+        } else {
+          tantiao_gaodu = tantiao_gaodu / 2
+        }
+      }
+    }
+    if (boll.offsetTop < xxx) {
+      speedY = -speedY
+    }
+    boll.style.top = boll.offsetTop + speedY + 'px'
+  } , 10)
+</script>
+</html>
